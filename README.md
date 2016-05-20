@@ -1,6 +1,6 @@
 #Ember-Install
 
-Simple bash script to easily install/uninstall ember-cli.
+Bash script to install/uninstall ember-cli.
 
 ## Installation
 
