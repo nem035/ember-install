@@ -1,0 +1,17 @@
+#!/bin/bash 
+
+source $(dirname $0)/print_utils
+
+install() {
+  ember-uninstall
+  print_header "Installing ember@$1 ..."
+  npm install -g ember-cli@$1
+}
+
+if [ "$#" == "1" ]; then
+  install $1
+else
+  install "latest"
+fi
+
+print_success

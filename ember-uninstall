@@ -1,0 +1,19 @@
+#!/bin/bash 
+
+source $(dirname $0)/print_utils
+
+# Remove old global ember-cli
+print_header "Uninstalling Ember-CLI"
+echo -e `ember --version`
+npm uninstall -g ember-cli  
+print_success
+
+# Clean NPM cache
+print_header "Cleaning NPM cache..."
+npm cache clean             
+print_success
+
+# Clean Bower cache
+print_header "Cleaning Bower cache..."
+bower cache clean           
+print_success

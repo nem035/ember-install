@@ -1,0 +1,23 @@
+#!/bin/bash 
+
+# color codes
+COLOR_SWITCH="\033["
+NORMAL="${COLOR_SWITCH}0m"          # no color
+LIGHT_RED="${COLOR_SWITCH}1;31m"    # light red
+LIGHT_GREEN="${COLOR_SWITCH}1;32m"  # light green
+YELLOW="${COLOR_SWITCH}1;33m"       # yellow  
+LIGHT_BLUE="${COLOR_SWITCH}1;34m"   # light blue
+
+# print function
+print="echo -e "
+
+# function to print head of each section
+print_header() {
+  $print "\n${LIGHT_BLUE}#########################################################${NORMAL}"
+  $print "${YELLOW}$1${NORMAL}\n"
+}
+
+# function to print the done message
+print_success() {
+  $print "\n${LIGHT_GREEN}Done.${NORMAL}"
+}
