@@ -1,19 +1,30 @@
-#!/bin/bash 
+#!/bin/bash
 
 source $(dirname $0)/print_utils
 
-# Remove old global ember-cli
-print_header "Uninstalling Ember-CLI"
-echo -e `ember --version`
-npm uninstall -g ember-cli  
-print_success
+uninstall() {
 
-# Clean NPM cache
-print_header "Cleaning NPM cache..."
-npm cache clean             
-print_success
+  # Remove old global ember-cli
+  print_header "Uninstalling Ember-CLI"
+  echo -e `ember --version`
+  npm uninstall -g ember-cli
+  print_success
 
-# Clean Bower cache
-print_header "Cleaning Bower cache..."
-bower cache clean           
-print_success
+  # Clean npm cache
+  print_header "Cleaning NPM cache..."
+  npm cache clean
+  print_success
+
+  # Clean bower cache
+  print_header "Cleaning Bower cache..."
+  bower cache clean
+  print_success
+}
+
+# Checking if ember-cli is installed
+print_header "Checking if Ember-CLI is installed..."
+if ! ember_loc="$(type -p "ember")" || [ -z "$ember_loc" ]; then
+  echo -e "Ember-CLI is not installed."
+else
+  uninstall
+fi
