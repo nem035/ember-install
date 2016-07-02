@@ -1,38 +1,58 @@
-#Ember-Install
+# Ember-Install
 
 Bash script to install/uninstall ember-cli.
 
+## Scripts
+- ### [ember-install](https://github.com/nem035/ember-install/blob/master/ember-install)
+  - script that uninstalls current ember cli, if one is installed, and installs the provided version (or latest if nothing is provided)
+     ```bash
+     # install ember cli
+     # if you don't specify a version, ember-install will use the latest
+     ember-install <version>
+    ```
+- [ember-uninstall](https://github.com/nem035/ember-install/blob/master/ember-uninstall)
+  - Script that uninstalls current ember cli
+    ```bash
+    # uninstall ember cli
+    ember-uninstall
+    ```
+
+- [print-utils](https://github.com/nem035/ember-install/blob/master/print_utils)
+  - Utility script that provides colored printing to the terminal
+
 ## Installation
 
-Clone the repo and make it your own:
+Clone the repo and remove the git tracking:
 
 ```bash
-  git clone git@github.com:nem035/ember-install.git
-  cd ember-install
-  rm -rf .git && git init
+git clone git@github.com:nem035/ember-install.git
+cd ember-install
+rm -rf .git
 ```
-Make the scripts executable
+
+Of course one can just download the raw scripts as well.
+
+Don't forget to make the scripts executable
 
 ```bash
-  chmod +x ember-install
-  chmod +x ember-uninstall
-  chmod +x print_utils
-
-  # or chmod +x *
+chmod +x ember-install
+chmod +x ember-uninstall
+chmod +x print_utils
 ```
 
 Modify your path to add the directory with `ember-install` scripts:
 
-```bash
-  export PATH=$PATH:/ember-install
-```
+- Bash:
 
-## Usage
+  ```bash
+  echo 'export PATH=$PATH:/'$(pwd) >> ~/.bashrc
+  ```
 
-```bash
-  # if you don't specify a version, ember-install will use the latest
-  ember-install <version>
-```
+- Zsh
+
+  ```bash
+  echo 'export PATH=$PATH:/'$(pwd) >> ~/.zshrc
+  ```
 
 ## Example
 ```bash
