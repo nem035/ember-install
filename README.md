@@ -3,8 +3,9 @@
 Bash script to install/uninstall ember-cli.
 
 ## Scripts
-- ### [ember-install](https://github.com/nem035/ember-install/blob/master/ember-install)
+- [ember-install](https://github.com/nem035/ember-install/blob/master/ember-install)
   - script that uninstalls current ember cli, if one is installed, and installs the provided version (or latest if nothing is provided)
+     
      ```bash
      # install ember cli
      # if you don't specify a version, ember-install will use the latest
@@ -12,6 +13,7 @@ Bash script to install/uninstall ember-cli.
     ```
 - [ember-uninstall](https://github.com/nem035/ember-install/blob/master/ember-uninstall)
   - Script that uninstalls current ember cli
+  
     ```bash
     # uninstall ember cli
     ember-uninstall
@@ -45,14 +47,16 @@ Modify your path to add the directory with `ember-install` scripts:
 - Bash:
 
   ```bash
-  echo 'export PATH=$PATH:/'$(pwd) >> ~/.bashrc
+  echo 'export PATH=$PATH:/'{{path_to_ember-install}} >> ~/.bashrc
   ```
 
 - Zsh
 
   ```bash
-  echo 'export PATH=$PATH:/'$(pwd) >> ~/.zshrc
+  echo 'export PATH=$PATH:/'{{path_to_ember-install}} >> ~/.zshrc
   ```
+  
+Assuming you are inside the `ember-install` directory, you can use `$(pwd)` instead of `{{path_to_ember-install}}`:
 
 ## Example
 ```bash
