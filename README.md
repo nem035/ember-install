@@ -19,9 +19,6 @@ Bash script to install/uninstall ember-cli.
     ember-uninstall
     ```
 
-- [print-utils](https://github.com/nem035/ember-install/blob/master/print_utils)
-  - Utility script that provides colored printing to the terminal
-
 ## Installation
 
 Clone the repo and remove the git tracking:
@@ -47,13 +44,13 @@ Modify your path to add the directory with `ember-install` scripts:
 - Bash:
 
   ```bash
-  echo 'export PATH=$PATH:/'{{path_to_ember-install}} >> ~/.bashrc
+  echo 'export PATH=$PATH:/{{path_to_ember-install}}' >> ~/.bashrc
   ```
 
 - Zsh
 
   ```bash
-  echo 'export PATH=$PATH:/'{{path_to_ember-install}} >> ~/.zshrc
+  echo 'export PATH=$PATH:/{{path_to_ember-install}}' >> ~/.zshrc
   ```
   
 Assuming you are inside the `ember-install` directory, you can use `$(pwd)` instead of `{{path_to_ember-install}}`:
