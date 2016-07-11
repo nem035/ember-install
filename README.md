@@ -31,7 +31,7 @@ rm -rf .git
 
 Of course one can just download the raw scripts as well.
 
-Don't forget to make the scripts executable
+*Note*: If necessary, make sure to make the scripts executable
 
 ```bash
 chmod +x ember-install
@@ -44,16 +44,16 @@ Modify your path to add the directory with `ember-install` scripts:
 - Bash:
 
   ```bash
-  echo 'export PATH=$PATH:/{{path_to_ember-install}}' >> ~/.bashrc
+  echo 'export PATH=$PATH:/{{path_to_ember-install_dir}}' >> ~/.bashrc
   ```
 
 - Zsh
 
   ```bash
-  echo 'export PATH=$PATH:/{{path_to_ember-install}}' >> ~/.zshrc
+  echo 'export PATH=$PATH:/{{path_to_ember-install_dir}}' >> ~/.zshrc
   ```
   
-Assuming you are inside the `ember-install` directory, you can use `$(pwd)` instead of `{{path_to_ember-install}}`:
+Assuming you are inside the `ember-install` directory, you can use `$(pwd)` instead of the path to that directory.
 
 ## Example
 ```bash
